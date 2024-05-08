@@ -1,0 +1,178 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<div class="container">
+  <section>
+    <table>
+      <tr>
+        <p class="pia">PORSCHE INTER AUTO KFT - PORSCHE BUDA th.</p>
+      </tr>
+      <tr>
+        <td id="datetime" class="datetime-right"></td>
+      </tr>
+    </table>
+    <tr>
+      <p class="ajanlatunk"><strong>AJÁNLATUNK:</strong></p>
+    </tr>
+    <!-- HÁROM OSZLOPOS TÁBLÁZAT -->
+    <table>
+      <thead>
+      <th scope="col"><strong>Az Ön műhelye:</strong></th>
+      <th scope="col"><strong>E-mail (céges):</strong></th>
+      <th scope="col"><strong>Érvényes:</strong></th>
+      </thead>
+      <tbody>
+      <tr>
+      <tr>
+        <td>PORSCHE INTER AUTÓ HUNGARIA KFT.</td>
+        <td id="email">E-mail</td>
+        <td id="expiryDate">ide jön az érvényességi idő: most+7 nap</td>
+      </tr>
+      <tr>
+        <td class="p161">Prielle Kornélia u. 45. <br>H-1117</td>
+        <td><select name="ert" id="ertekesito"></select></td>
+        <td class="text" rowspan="2">Az ár a feltüntetett érvényességen belül érvényes.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td id="telefonszam">értékesítő telefonszáma</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <select id="auto" onchange="updateAuto()">
+            <option value="0">Válasszon autót</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="car-image">
+          <img src="./img/Amarok.png" alt="autokep">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3"></td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <table>
+      <tr class="x68">
+        <td class="x70" rowspan="4">1.
+          <div>
+            <div id="kepCella" style="width: 180px; height: 160px; overflow: hidden; cursor:pointer;"></div>
+            <input type="file" name="" id="kepValaszto" accept="image/*" style="display: none">
+          </div>
+        </td>
+        <td class="x69">Megnevezés</td>
+        <td class="x45">Bruttó ár</td>
+        <td class="x54">db</td>
+        <td class="x31">Összesen bruttó</td>
+
+      </tr>
+      <tr class="x68">
+        <td rowspan="3" class="x69">
+          <textarea id="megnevezes" rows="7" placeholder="Ide ís a leírást"></textarea>
+        </td>
+        <td class="x45"><input type="number" id="brutto_ar"> Ft</td>
+        <td class="x54"><input type="number" id="db"></td>
+        <td class="x31" id="osszesenBrutto">Összesen bruttó érték</td>
+      </tr>
+      <tr>
+        <td rowspan="2">szállíthatóság kb. <input type="number" id="ido"></td>
+        <td rowspan="2"></td>
+        <td rowspan="2"></td>
+      </tr>
+      <table class="tabla2">
+        <tr class="x68">
+          <td class="x70" rowspan="3">2.
+            <div>
+              <div id="kepCella2" style="width: 180px; height: 160px; overflow: hidden; cursor:pointer;"></div>
+              <input type="file" id="kepValaszto2" accept="image/*" style="display: none">
+            </div>
+          </td>
+        </tr>
+        <tr class="x68">
+          <td rowspan="3" class="x69">
+            <textarea id="megnevezes2" rows="7" placeholder="Ide ís a leírást"></textarea>
+          </td>
+          <td class="x45"><input type="number" id="brutto_ar2"> Ft</td>
+          <td class="x54"><input type="number" id="db2"></td>
+          <td class="x31" id="osszesenBrutto2">Összesen bruttó érték</td>
+        </tr>
+        <tr>
+          <td rowspan="2">szállíthatóság kb. <input type="number" id="ido2"></td>
+          <td rowspan="2"></td>
+          <td rowspan="2"></td>
+        </tr>
+      </table>
+      <table>
+        <tr class="x49">
+          <td class="autora" colspan="4">Az autóra felszerelés költsége bruttó:</td>
+          <td></td>
+          <td class="y11">
+            <select name="" id="kerekszereles" onchange="updateMunkadij()">
+              <option value="0">Válasszon szolgáltatást</option>
+            </select>
+          </td>
+          <td id="munkadij">ide jön a munkadíj</td>
+        </tr>
+        <tr>
+          <td colspan="4"><strong>Összesen:</strong></td>
+          <td id="oneVar">1. változat</td>
+          <td id="x80"></td>
+          <td id="osszesen_1"></td>
+        </tr>
+        <tr>
+          <td colspan="4"></td>
+          <td id="secVar">2. változat</td>
+          <td id="x90"></td>
+          <td id="osszesen_2"></td>
+        </tr>
+        <tr class="place">
+          <td colspan="7"></td>
+        </tr>
+        <tr class="place1">
+          <td colspan="3">Köszönjük érdeklődését, üdvözlettel:</td>
+          <td></td>
+          <td></td>
+          <td class="thName" id="thanksName">név</td>
+          <td id="thanksTelefonszam">telefonszám</td>
+        </tr>
+        <tr class="place red">
+          <td id="toggleText" colspan="7">Finomszemű hólánc alkalmazása csak a
+          jármű által jóváhagyott hólánccal lehetséges azon a tengelyen,
+          amelyre a jármű kezelési utasítása engedélyezi.</td>
+        </tr>
+      </table>
+    </table>
+  </section>
+  <script src="../ajanlatkeszito/js/autok.js"></script>
+  <script src="../ajanlatkeszito/js/ertekesitok.js"></script>
+  <script src="js/app.js"></script>
+</div>
+</body>
+
+</html>
