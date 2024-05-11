@@ -10,13 +10,12 @@
 }
 
 .container:hover {
-  box-shadow: 2px 8px 16px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
 }
 
 .pia {
   font-weight: bold;
-  color: black;
-  text-align: center;
+  text-align: right;
   height: fit-content;
   margin-bottom: 0;
   border-bottom: 3px solid rgb(155, 155, 238);
@@ -74,7 +73,10 @@ th {
 #brutto_ar2,
 #ido,
 #ido2,
-#db2 {
+#ido3,
+#db2,
+#brutto_ar3,
+#db3{
   border: none;
   outline: none;
   padding: 5px;
@@ -132,11 +134,18 @@ img#autokep {
 #tabla select {
   width: 100%;
 }
+.x54a {
+  width: 35px;
+}
 
 .x68 {
   height: fit-content;
   text-align: center;
   font-weight: bold;
+}
+
+.x68a {
+  width: 100px;
 }
 
 #megnevezes,
@@ -147,6 +156,12 @@ img#autokep {
   border: none;
 }
 
+#megnevezes3 {
+  width: 100%;
+  text-align: left;
+  border: none;
+}
+
 .x70 {
   height: 150px;
   width: 180px;
@@ -154,9 +169,17 @@ img#autokep {
   vertical-align: center;
 }
 td.x70 {
-  text-align: center;
+  text-align: left;
   vertical-align: center;
   height: 180px;
+}
+.felni {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
 }
 
 .x45,
@@ -166,25 +189,26 @@ td.x70 {
   min-width: 50px;
   height: 4px;
 }
+.x45a {
+  width: 224px;
+  height: 4px;
+}
 
 .table {
   table-layout: auto;
   width: 100%;
 }
 
-#brutto_ar {
+#brutto_ar,
+#brutto_ar2,
+#brutto_ar3 {
   width: 110px;
+  border: none;
 }
 
-#db {
-  width: 40px;
-}
-
-#brutto_ar2 {
-  width: 110px;
-}
-
-#db2 {
+#db,
+#db2,
+#db3{
   width: 40px;
 }
 
@@ -218,7 +242,8 @@ td.autora {
 }
 
 #osszesen_1,
-#osszesen_2 {
+#osszesen_2,
+#osszesen_3 {
   font-weight: 700;
   text-align: right;
   width: 80px;
@@ -226,7 +251,7 @@ td.autora {
 
 .x48,
 .x49 {
-  border-bottom: 3px solid rgb(155, 155, 238);
+  border-bottom: 3px solid black;
 }
 
 .place1 {
@@ -253,12 +278,32 @@ td.autora {
 }
 
 #oneVar {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(216, 205, 205);
 }
 
 #x80,
-#x90 {
+#x90,
+#x100{
   border: none;
   text-align: center;
   font-weight: bold;
+}
+
+#vono {
+  text-align: center;
+}
+#x71,
+#x72 {
+  border: 1px solid rgb(216, 205, 205);
+  height: 1px;
+  padding: 2px;
+}
+
+#kepCella,
+#kepCella2,
+#kepCella3 {
+  width: 180px;
+  height: 160px;
+  overflow: hidden;
+  cursor:pointer;
 }

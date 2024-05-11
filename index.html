@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="hu">
 
 <head>
   <meta charset="utf-8">
@@ -26,15 +26,17 @@
 <div class="container">
   <section>
     <table>
+      <tbody>
       <tr>
-        <p class="pia">PORSCHE INTER AUTO KFT - PORSCHE BUDA th.</p>
+        <td class="pia">PORSCHE INTER AUTO HUNGARIA KFT - PORSCHE BUDA telephely</td>
       </tr>
-      <tr>
+      <tr class="place">
         <td id="datetime" class="datetime-right"></td>
       </tr>
+      </tbody>
     </table>
     <tr>
-      <p class="ajanlatunk"><strong>AJÁNLATUNK:</strong></p>
+      <td class="ajanlatunk"><strong>AJÁNLATUNK:</strong><span id="ajanlatunk">  </span></td>
     </tr>
     <!-- HÁROM OSZLOPOS TÁBLÁZAT -->
     <table>
@@ -47,17 +49,20 @@
       <tr>
       <tr>
         <td>PORSCHE INTER AUTÓ HUNGARIA KFT.</td>
-        <td id="email">E-mail</td>
+        <td><select name="ert" id="ertekesito"></select></td>
         <td id="expiryDate">ide jön az érvényességi idő: most+7 nap</td>
       </tr>
       <tr>
         <td class="p161">Prielle Kornélia u. 45. <br>H-1117</td>
-        <td><select name="ert" id="ertekesito"></select></td>
-        <td class="text" rowspan="2">Az ár a feltüntetett érvényességen belül érvényes.</td>
+        <td id="email">E-mail</td>
+        <td class="text" rowspan="2">Az árakat az ajánlat érvényességéig tudjuk biztosítani!</td>
       </tr>
       <tr>
         <td></td>
         <td id="telefonszam">értékesítő telefonszáma</td>
+      </tr>
+      <tr>
+        <td colspan="3"><strong>Az Ön autója</strong></td>
       </tr>
       <tr>
         <td colspan="3">
@@ -68,66 +73,97 @@
       </tr>
       <tr>
         <td colspan="3" class="car-image">
-          <img src="./img/Amarok.png" alt="autokep">
+          <img id="autokep" src="./img/Amarok.png" alt="autokep">
         </td>
       </tr>
-      <tr>
+      <tr class="place">
         <td colspan="3"></td>
       </tr>
       </tbody>
     </table>
   </section>
-  <section>
-    <table>
+
+  <table class="tabla">
+    <tr class="x68">
+      <td class="x70" rowspan="4">1.
+        <div>
+          <div id="kepCella" ></div>
+          <input type="file" name="" id="kepValaszto" accept="image/*" style="display: none">
+        </div>
+      </td>
+      <td class="x69">Megnevezés</td>
+      <td class="x45">Bruttó ár</td>
+      <td class="x54">db</td>
+      <td class="x31">Összesen bruttó</td>
+
+    </tr>
+    <tr class="x68">
+      <td rowspan="3" class="x69">
+        <textarea id="megnevezes" rows="7" placeholder="Ide írd a leírást"></textarea>
+      </td>
+      <td class="x45"><input type="number" id="brutto_ar"> Ft</td>
+      <td class="x54"><input type="number" id="db"></td>
+      <td class="x31" id="osszesenBrutto">Összesen bruttó érték</td>
+    </tr>
+    <tr>
+      <td rowspan="2">szállíthatóság kb. <input type="number" id="ido"></td>
+      <td rowspan="2"></td>
+      <td rowspan="2"></td>
+    </tr>
+    <table id="tableX71">
+
+      <td id="x71" colspan="3"></td>
+
+    </table>
+    <table class="tabla2" id="tablaSor">
       <tr class="x68">
-        <td class="x70" rowspan="4">1.
+        <td class="x70" rowspan="3">2.
           <div>
-            <div id="kepCella" style="width: 180px; height: 160px; overflow: hidden; cursor:pointer;"></div>
-            <input type="file" name="" id="kepValaszto" accept="image/*" style="display: none">
+            <div id="kepCella2" ></div>
+            <input type="file" id="kepValaszto2" accept="image/*" style="display: none">
           </div>
         </td>
-        <td class="x69">Megnevezés</td>
-        <td class="x45">Bruttó ár</td>
-        <td class="x54">db</td>
-        <td class="x31">Összesen bruttó</td>
-
       </tr>
       <tr class="x68">
         <td rowspan="3" class="x69">
-          <textarea id="megnevezes" rows="7" placeholder="Ide ís a leírást"></textarea>
+          <textarea id="megnevezes2" rows="7" placeholder="Ide írd a leírást"></textarea>
         </td>
-        <td class="x45"><input type="number" id="brutto_ar"> Ft</td>
-        <td class="x54"><input type="number" id="db"></td>
-        <td class="x31" id="osszesenBrutto">Összesen bruttó érték</td>
+        <td class="x45"><input type="number" id="brutto_ar2"> Ft</td>
+        <td class="x54"><input type="number" id="db2"></td>
+        <td class="x31" id="osszesenBrutto2">Összesen bruttó érték</td>
       </tr>
       <tr>
-        <td rowspan="2">szállíthatóság kb. <input type="number" id="ido"></td>
+        <td rowspan="2">szállíthatóság kb. <input type="number" id="ido2"> munkanap</td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
       </tr>
-      <table class="tabla2">
-        <tr class="x68">
-          <td class="x70" rowspan="3">2.
-            <div>
-              <div id="kepCella2" style="width: 180px; height: 160px; overflow: hidden; cursor:pointer;"></div>
-              <input type="file" id="kepValaszto2" accept="image/*" style="display: none">
-            </div>
-          </td>
-        </tr>
-        <tr class="x68">
-          <td rowspan="3" class="x69">
-            <textarea id="megnevezes2" rows="7" placeholder="Ide ís a leírást"></textarea>
-          </td>
-          <td class="x45"><input type="number" id="brutto_ar2"> Ft</td>
-          <td class="x54"><input type="number" id="db2"></td>
-          <td class="x31" id="osszesenBrutto2">Összesen bruttó érték</td>
-        </tr>
-        <tr>
-          <td rowspan="2">szállíthatóság kb. <input type="number" id="ido2"></td>
-          <td rowspan="2"></td>
-          <td rowspan="2"></td>
-        </tr>
-      </table>
+    </table>
+
+    <!-- 3. TÁBLÁZAT -->
+    <table class="tabla3" id="tablaSor1">
+      <tr class="x68">
+        <td class="x70" rowspan="3">3.
+          <div>
+            <div id="kepCella3" ></div>
+            <input type="file" id="kepValaszto3" accept="image/*" style="display: none">
+          </div>
+        </td>
+      </tr>
+      <tr class="x68">
+        <td rowspan="3" class="x69a">
+          <textarea id="megnevezes3" rows="7" placeholder="Ide írd a leírást"></textarea>
+        </td>
+        <td class="x45a"><input type="number" id="brutto_ar3"> Ft</td>
+        <td class="x54a"><input type="number" id="db3"></td>
+        <td class="x31a" id="osszesenBrutto3">Összesen bruttó érték</td>
+      </tr>
+      <tr>
+        <td rowspan="2">szállíthatóság kb. <input type="number" id="ido3"> munkanap</td>
+        <td rowspan="2"></td>
+        <td rowspan="2"></td>
+      </tr>
+
+      <!-- idáig tart a 3. táblázat -->
       <table>
         <tr class="x49">
           <td class="autora" colspan="4">Az autóra felszerelés költsége bruttó:</td>
@@ -145,14 +181,24 @@
           <td id="x80"></td>
           <td id="osszesen_1"></td>
         </tr>
-        <tr>
-          <td colspan="4"></td>
+        <tr id="secRowCollapse">
+          <td colspan="4"><strong></strong></td>
           <td id="secVar">2. változat</td>
           <td id="x90"></td>
           <td id="osszesen_2"></td>
         </tr>
+        <tr id="thirdRowCollapse">
+          <td colspan="4"><strong></strong></td>
+          <td id="thirdVar">3. változat</td>
+          <td id="x100"></td>
+          <td id="osszesen_3"></td>
         <tr class="place">
-          <td colspan="7"></td>
+          <td colspan="7" id="vono"></td>
+        </tr>
+        <tr class="place2">
+          <td colspan="7" id="szallitas">
+            <textarea name="" id="megnevezes4" cols="30" rows="1"></textarea>
+          </td>
         </tr>
         <tr class="place1">
           <td colspan="3">Köszönjük érdeklődését, üdvözlettel:</td>
@@ -162,17 +208,22 @@
           <td id="thanksTelefonszam">telefonszám</td>
         </tr>
         <tr class="place red">
-          <td id="toggleText" colspan="7">Finomszemű hólánc alkalmazása csak a
-          jármű által jóváhagyott hólánccal lehetséges azon a tengelyen,
-          amelyre a jármű kezelési utasítása engedélyezi.</td>
+          <td class="toggleText" colspan="7">Finomszemű hólánc alkalmazása csak a
+            jármű által jóváhagyott hólánccal lehetséges azon a tengelyen,
+            amelyre a jármű kezelési utasítása engedélyezi.
+          </td>
+        </tr>
+        <tr class="place red">
+          <td class="toggleText" colspan="7">Az ajánlatban szereplő képek illusztrációk.</td>
         </tr>
       </table>
+
     </table>
-  </section>
-  <script src="../ajanlatkeszito/js/autok.js"></script>
-  <script src="../ajanlatkeszito/js/ertekesitok.js"></script>
-  <script src="js/app.js"></script>
+  </table>
 </div>
+<script src="../ajanlatkeszito/js/autok.js"></script>
+<script src="../ajanlatkeszito/js/ertekesitok.js"></script>
+<script src="js/app.js"></script>
 </body>
 
 </html>
