@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <title>Porsche Inter Auto Hungaria Kft</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <meta name="description" content="Porsche Inter Auto Hungaria ajánlatai és szolgáltatásai.">
 
   <meta property="og:title" content="">
   <meta property="og:type" content="">
@@ -14,11 +14,11 @@
   <meta property="og:image" content="">
   <meta property="og:image:alt" content="">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icon.png">
 
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="manifest" href="./site.webmanifest">
   <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -41,15 +41,17 @@
     <!-- HÁROM OSZLOPOS TÁBLÁZAT -->
     <table>
       <thead>
-      <th scope="col"><strong>Az Ön műhelye:</strong></th>
-      <th scope="col"><strong>E-mail (céges):</strong></th>
-      <th scope="col"><strong>Érvényes:</strong></th>
+      <tr>
+        <th scope="col"><strong>Az Ön műhelye:</strong></th>
+        <th scope="col"><strong>E-mail (céges):</strong></th>
+        <th scope="col"><strong>Érvényes:</strong></th>
+      </tr>
       </thead>
+
       <tbody>
       <tr>
-      <tr>
         <td>PORSCHE INTER AUTÓ HUNGARIA KFT.</td>
-        <td><select name="ert" id="ertekesito"></select></td>
+        <td><label for="ertekesito"></label><select name="ert" id="ertekesito"></select></td>
         <td id="expiryDate">ide jön az érvényességi idő: most+7 nap</td>
       </tr>
       <tr>
@@ -66,7 +68,7 @@
       </tr>
       <tr>
         <td colspan="3">
-          <select id="auto" onchange="updateAuto()">
+          <label for="auto"></label><select id="auto" onchange="updateAuto()">
             <option value="0">Válasszon autót</option>
           </select>
         </td>
@@ -84,10 +86,11 @@
   </section>
 
   <table class="tabla">
+    <tbody>
     <tr class="x68">
       <td class="x70" rowspan="4">1.
         <div>
-          <div id="kepCella" ></div>
+          <div id="kepCella"></div>
           <input type="file" name="" id="kepValaszto" accept="image/*" style="display: none">
         </div>
       </td>
@@ -99,17 +102,18 @@
     </tr>
     <tr class="x68">
       <td rowspan="3" class="x69">
-        <textarea id="megnevezes" rows="7" placeholder="Ide írd a leírást"></textarea>
+        <label for="megnevezes"></label><textarea id="megnevezes" rows="7" placeholder="Ide írd a leírást"></textarea>
       </td>
-      <td class="x45"><input type="number" id="brutto_ar"> Ft</td>
-      <td class="x54"><input type="number" id="db"></td>
+      <td class="x45"><label for="brutto_ar"></label><input type="number" id="brutto_ar"> Ft</td>
+      <td class="x54"><label for="db"></label><input type="number" id="db"></td>
       <td class="x31" id="osszesenBrutto">Összesen bruttó érték</td>
     </tr>
     <tr>
-      <td rowspan="2">szállíthatóság kb. <input type="number" id="ido"></td>
+      <td rowspan="2">szállíthatóság kb. <label for="ido"></label><input type="number" id="ido"></td>
       <td rowspan="2"></td>
       <td rowspan="2"></td>
     </tr>
+    </tbody>
     <table id="tableX71">
 
       <td id="x71" colspan="3"></td>
@@ -119,21 +123,21 @@
       <tr class="x68">
         <td class="x70" rowspan="3">2.
           <div>
-            <div id="kepCella2" ></div>
+            <div id="kepCella2"></div>
             <input type="file" id="kepValaszto2" accept="image/*" style="display: none">
           </div>
         </td>
       </tr>
       <tr class="x68">
         <td rowspan="3" class="x69">
-          <textarea id="megnevezes2" rows="7" placeholder="Ide írd a leírást"></textarea>
+          <label for="megnevezes2"></label><textarea id="megnevezes2" rows="7" placeholder="Ide írd a leírást"></textarea>
         </td>
-        <td class="x45"><input type="number" id="brutto_ar2"> Ft</td>
-        <td class="x54"><input type="number" id="db2"></td>
+        <td class="x45"><label for="brutto_ar2"></label><input type="number" id="brutto_ar2"> Ft</td>
+        <td class="x54"><label for="db2"></label><input type="number" id="db2"></td>
         <td class="x31" id="osszesenBrutto2">Összesen bruttó érték</td>
       </tr>
       <tr>
-        <td rowspan="2">szállíthatóság kb. <input type="number" id="ido2"> munkanap</td>
+        <td rowspan="2">szállíthatóság kb. <label for="ido2"></label><input type="number" id="ido2"> munkanap</td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
       </tr>
@@ -144,86 +148,86 @@
       <tr class="x68">
         <td class="x70" rowspan="3">3.
           <div>
-            <div id="kepCella3" ></div>
+            <div id="kepCella3"></div>
             <input type="file" id="kepValaszto3" accept="image/*" style="display: none">
           </div>
         </td>
       </tr>
       <tr class="x68">
         <td rowspan="3" class="x69a">
-          <textarea id="megnevezes3" rows="7" placeholder="Ide írd a leírást"></textarea>
+          <label for="megnevezes3"></label><textarea id="megnevezes3" rows="7" placeholder="Ide írd a leírást"></textarea>
         </td>
-        <td class="x45a"><input type="number" id="brutto_ar3"> Ft</td>
-        <td class="x54a"><input type="number" id="db3"></td>
+        <td class="x45a"><label for="brutto_ar3"></label><input type="number" id="brutto_ar3"> Ft</td>
+        <td class="x54a"><label for="db3"></label><input type="number" id="db3"></td>
         <td class="x31a" id="osszesenBrutto3">Összesen bruttó érték</td>
       </tr>
       <tr>
-        <td rowspan="2">szállíthatóság kb. <input type="number" id="ido3"> munkanap</td>
+        <td rowspan="2">szállíthatóság kb. <label for="ido3"></label><input type="number" id="ido3"> munkanap</td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
       </tr>
-
-      <!-- idáig tart a 3. táblázat -->
-      <table>
-        <tr class="x49">
-          <td class="autora" colspan="4">Az autóra felszerelés költsége bruttó:</td>
-          <td></td>
-          <td class="y11">
-            <select name="" id="kerekszereles" onchange="updateMunkadij()">
-              <option value="0">Válasszon szolgáltatást</option>
-            </select>
-          </td>
-          <td id="munkadij">ide jön a munkadíj</td>
-        </tr>
-        <tr>
-          <td colspan="4"><strong>Összesen:</strong></td>
-          <td id="oneVar">1. változat</td>
-          <td id="x80"></td>
-          <td id="osszesen_1"></td>
-        </tr>
-        <tr id="secRowCollapse">
-          <td colspan="4"><strong></strong></td>
-          <td id="secVar">2. változat</td>
-          <td id="x90"></td>
-          <td id="osszesen_2"></td>
-        </tr>
-        <tr id="thirdRowCollapse">
-          <td colspan="4"><strong></strong></td>
-          <td id="thirdVar">3. változat</td>
-          <td id="x100"></td>
-          <td id="osszesen_3"></td>
-        <tr class="place">
-          <td colspan="7" id="vono"></td>
-        </tr>
-        <tr class="place2">
-          <td colspan="7" id="szallitas">
-            <textarea name="" id="megnevezes4" cols="30" rows="1"></textarea>
-          </td>
-        </tr>
-        <tr class="place1">
-          <td colspan="3">Köszönjük érdeklődését, üdvözlettel:</td>
-          <td></td>
-          <td></td>
-          <td class="thName" id="thanksName">név</td>
-          <td id="thanksTelefonszam">telefonszám</td>
-        </tr>
-        <tr class="place red">
-          <td class="toggleText" colspan="7">Finomszemű hólánc alkalmazása csak a
-            jármű által jóváhagyott hólánccal lehetséges azon a tengelyen,
-            amelyre a jármű kezelési utasítása engedélyezi.
-          </td>
-        </tr>
-        <tr class="place red">
-          <td class="toggleText" colspan="7">Az ajánlatban szereplő képek illusztrációk.</td>
-        </tr>
-      </table>
-
     </table>
+    <!-- idáig tart a 3. táblázat -->
+    <table>
+      <tr class="x49">
+        <td class="autora" colspan="4">Az autóra felszerelés költsége bruttó:</td>
+        <td></td>
+        <td class="y11">
+          <label for="kerekszereles"></label><select name="" id="kerekszereles" onchange="updateMunkadij()">
+            <option value="0">Válasszon szolgáltatást</option>
+          </select>
+        </td>
+        <td id="munkadij">ide jön a munkadíj</td>
+      </tr>
+      <tr>
+        <td colspan="4"><strong>Összesen:</strong></td>
+        <td id="oneVar">1. változat</td>
+        <td id="x80"></td>
+        <td id="osszesen_1"></td>
+      </tr>
+      <tr id="secRowCollapse">
+        <td colspan="4"><strong></strong></td>
+        <td id="secVar">2. változat</td>
+        <td id="x90"></td>
+        <td id="osszesen_2"></td>
+      </tr>
+      <tr id="thirdRowCollapse">
+        <td colspan="4"><strong></strong></td>
+        <td id="thirdVar">3. változat</td>
+        <td id="x100"></td>
+        <td id="osszesen_3"></td>
+      <tr class="place">
+        <td colspan="7" id="vono"></td>
+      </tr>
+      <tr class="place2">
+        <td colspan="7" id="szallitas">
+          <label for="megnevezes4"></label><textarea name="" id="megnevezes4" cols="30" rows="1"></textarea>
+        </td>
+      </tr>
+      <tr class="place1">
+        <td colspan="3">Köszönjük érdeklődését, üdvözlettel:</td>
+        <td></td>
+        <td></td>
+        <td class="thName" id="thanksName">név</td>
+        <td id="thanksTelefonszam">telefonszám</td>
+      </tr>
+      <tr class="place red">
+        <td class="toggleText" colspan="7">Finomszemű hólánc alkalmazása csak a
+          jármű által jóváhagyott hólánccal lehetséges azon a tengelyen,
+          amelyre a jármű kezelési utasítása engedélyezi.
+        </td>
+      </tr>
+      <tr class="place red">
+        <td class="toggleText" colspan="7">Az ajánlatban szereplő képek illusztrációk.</td>
+      </tr>
+    </table>
+
   </table>
+
+  <script src="../ajanlatkeszito/js/autok.js"></script>
+  <script src="../ajanlatkeszito/js/ertekesitok.js"></script>
+  <script src="../ajanlatkeszito/js/app.js"></script>
 </div>
-<script src="../ajanlatkeszito/js/autok.js"></script>
-<script src="../ajanlatkeszito/js/ertekesitok.js"></script>
-<script src="js/app.js"></script>
 </body>
 
 </html>
