@@ -370,4 +370,44 @@ document.getElementById('db2').addEventListener('change', frissitOsszesen2);
 document.getElementById('kerekszereles').addEventListener('change', frissitOsszesen2);
 document.addEventListener('DOMContentLoaded', frissitOsszesen2);
 
+//1. kép feltöltése
+document.getElementById("kepCella").addEventListener('click', function (e) {
+  const file = e.target.files[0];
+  if (file && file.type.startsWith('image/')){
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const kepCella = document.getElementById('kepCella');
+      kepCella.innerHTML = '';               //előző kép eltávolítása
+      const img = new Image();
+      img.src = e.target.result;             // a beolvasott kép beolvasása
+
+      img.className = 'felni';
+      kepCella.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+  }
+})
+
+//2. kép
+document.getElementById("kepCella2").addEventListener('click', function () {
+  const imageInput = document.getElementById("kepValaszto2");
+  imageInput.click();
+})
+
+document.getElementById("kepValaszto2").addEventListener('change', function (e) {
+  const file2 = e.target.files[0];
+  if (file2 && file2.type.startsWith('image/')){
+    const reader2 = new FileReader();
+    reader2.onload = function (e) {
+      const kepCella2 = document.getElementById('kepCella2');
+      kepCella2.innerHTML = '';
+      const img2 = new Image();
+      img2.src = e.target.result;
+
+      img2.className = 'felni';
+      kepCella2.appendChild(img2);
+    };
+    reader2.readAsDataURL(file2);
+  }
+})
 
