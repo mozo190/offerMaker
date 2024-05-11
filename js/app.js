@@ -411,3 +411,25 @@ document.getElementById("kepValaszto2").addEventListener('change', function (e) 
   }
 })
 
+//3. kép feltöltése
+document.getElementById('kepCella3').addEventListener('click', function (){
+  const imageInput = document.getElementById('kepValaszto3');
+  imageInput.click();
+});
+
+document.getElementById('kepValaszto3').addEventListener('change', function (e) {
+  const file2 = e.target.files[0];
+  if (file2 && file2.type.startsWith('image/')){
+    const reader2 = new FileReader();
+    reader2.onload = function (e){
+      const kepCella2 = document.getElementById('kepCella3');
+      kepCella2.innerHTML = '';
+      const img2 = new Image();
+      img2.src = e.target.result;
+
+      img2.className = 'felni';
+      kepCella2.appendChild(img2);
+    };
+    reader2.readAsDataURL(file2);
+  }
+});
