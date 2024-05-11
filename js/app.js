@@ -433,3 +433,19 @@ document.getElementById('kepValaszto3').addEventListener('change', function (e) 
     reader2.readAsDataURL(file2);
   }
 });
+
+//utolsó sor kattintásra eltűnik/megjelenik
+document.addEventListener('DOMContentLoaded', () => {
+  const cella = document.getElementById('toggleText');
+  let textDisable = false;
+
+  cella.addEventListener('click', () => {
+    if (textDisable){
+      cella.textContent =  "Finomszemű hólánc alkalmazása csak a járműgyártó által jóváhagyott hólánccal lehetséges azon a tengelyen, amelyre a jármű kezelési utasítása engedélyezi.";
+      textDisable = false;
+    } else {
+      cella.textContent = '';
+      textDisable = true;
+    }
+  });
+});
