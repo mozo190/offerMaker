@@ -134,14 +134,14 @@ function updateOsszes() {
   let bruttoAr = parseInt(bruttoArElem.value);
   let db = parseInt(dbElem.value);
 
-  if (isNaN(bruttoAr) || bruttoAr <= 0){
+  if (isNaN(bruttoAr) || bruttoAr <= 0) {
     bruttoAr = 0;
     bruttoArElem.classList.add("error");
   } else {
     bruttoArElem.classList.remove("error");
   }
 
-  if (isNaN(db) || db <= 0){
+  if (isNaN(db) || db <= 0) {
     db = 0;
     dbElem.classList.add("error");
   } else {
@@ -152,6 +152,7 @@ function updateOsszes() {
 
   frissitOsszesen();
 }
+
 document.getElementById("brutto_ar").addEventListener('change', updateOsszes);
 document.getElementById("db").addEventListener('change', updateOsszes);
 
@@ -169,14 +170,14 @@ function updatOsszesen2() {
   let bruttoAr2 = parseInt(bruttoArElem.value);
   let db2 = parseInt(dbElem.value);
 
-  if (isNaN(bruttoAr2) || bruttoAr2 <= 0){
+  if (isNaN(bruttoAr2) || bruttoAr2 <= 0) {
     bruttoAr2 = 0;
     bruttoArElem.classList.add("error");
   } else {
     bruttoArElem.classList.remove("error");
   }
 
-  if (isNaN(db2) || db2 <= 0){
+  if (isNaN(db2) || db2 <= 0) {
     db = 0;
     dbElem.classList.add("error");
   } else {
@@ -187,6 +188,7 @@ function updatOsszesen2() {
 
   frissitOsszesen();
 }
+
 document.getElementById("brutto_ar2").addEventListener('change', updatOsszesen2);
 document.getElementById("db2").addEventListener('change', updatOsszesen2);
 
@@ -206,14 +208,14 @@ function updateOsszes3() {
   let bruttoAr3 = parseInt(bruttoArElem.value);
   let db3 = parseInt(dbElem.value);
 
-  if (isNaN(bruttoAr3) || bruttoAr3 <= 0){
+  if (isNaN(bruttoAr3) || bruttoAr3 <= 0) {
     bruttoAr3 = 0;
     bruttoArElem.classList.add("error");
   } else {
     bruttoArElem.classList.remove("error");
   }
 
-  if (isNaN(db3) || db3 <= 0){
+  if (isNaN(db3) || db3 <= 0) {
     db3 = 0;
     dbElem.classList.add("error");
   } else {
@@ -243,19 +245,19 @@ const szolgaltatasok = {
   "gumiszerelés 16'-ig Ft/4 db": {"ar": "15 875", "netto": "12 500"},
   "gumiszerelés 17-19'-ig Ft/4 db": {"ar": "19 050", "netto": "15 000"},
   "gumiszerelés 20'-ig Ft/4 db": {"ar": "25 275", "netto": "19 902"},
-  "vonóhorog szerelés": { ar: "130 000", netto: "102 362" },
-  "kamera szerelés": { ar: "150 000", netto: "118 110" },
-  "első vagy hátsó sárfogó szerelés": { ar: "15 000", netto: "11 811" },
-  "első és hátsó sárfogó szerelés": { ar: "30 000", netto: "23 622" },
-  "légterelő szerelés": { ar: "8 000", netto: "6 300" },
-  "felépítmény szerelés": { ar: "100 000", netto: "78 740" },
-  "váltózár szerelés": { ar: "45 000", netto: "35 433" },
-  "riasztó szerelés": { ar: "35 000", netto: "27 560" },
-  "lökhárító fólia szerelés": {ar: "15 000", netto: "11 811" },
-  "VW/Skoda appconnect szerelés": { ar: "25 000", netto: "19 685" },
-  "Audi Smartphone szerelés": { ar: "150 000", netto: "118 110" },
-  "tükörmonitor + kamera szerelés": { ar: "84 000", netto: "66 000" },
-  "külön tájékoztató alapján": { ar: "" }
+  "vonóhorog szerelés": {ar: "130 000", netto: "102 362"},
+  "kamera szerelés": {ar: "150 000", netto: "118 110"},
+  "első vagy hátsó sárfogó szerelés": {ar: "15 000", netto: "11 811"},
+  "első és hátsó sárfogó szerelés": {ar: "30 000", netto: "23 622"},
+  "légterelő szerelés": {ar: "8 000", netto: "6 300"},
+  "felépítmény szerelés": {ar: "100 000", netto: "78 740"},
+  "váltózár szerelés": {ar: "45 000", netto: "35 433"},
+  "riasztó szerelés": {ar: "35 000", netto: "27 560"},
+  "lökhárító fólia szerelés": {ar: "15 000", netto: "11 811"},
+  "VW/Skoda appconnect szerelés": {ar: "25 000", netto: "19 685"},
+  "Audi Smartphone szerelés": {ar: "150 000", netto: "118 110"},
+  "tükörmonitor + kamera szerelés": {ar: "84 000", netto: "66 000"},
+  "külön tájékoztató alapján": {ar: ""}
 };
 
 let bruttoNettoAllapot = true;  // true: bruttó, false: netto
@@ -285,12 +287,12 @@ function initSzolgaltatasDropdown() {
   });
 }
 
-function updateMunkadij(){
+function updateMunkadij() {
   const valasztottSzolgaltatas = document.getElementById("kerekszereles").value;
   const munkadijElem = document.getElementById("munkadij");
   const kivalasztottSzolgaltatasAdatok = szolgaltatasok[valasztottSzolgaltatas];
 
-  if (valasztottSzolgaltatas === ""){
+  if (valasztottSzolgaltatas === "") {
     munkadijElem.textContent = "0 Ft";
   }
   const munkadij = bruttoNettoAllapot ? kivalasztottSzolgaltatasAdatok.ar : kivalasztottSzolgaltatasAdatok.netto;
@@ -310,7 +312,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   oneVar.addEventListener('click', function () {
     isConstentVisible = !isConstentVisible;
-    if (!isConstentVisible){
+    if (!isConstentVisible) {
       oneVar.textContent = "";
       secVar.textContent = "";
       thirdVar.textContent = "";
@@ -328,25 +330,44 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function konvertSzamma(text) {
-  const  clearText = text.replace(" Ft", "").replace(/\s+/g, ''); //Eltávolítjuk a Ft-ot és az összes szóközt
+  const clearText = text.replace(" Ft", "").replace(/\s+/g, ''); //Eltávolítjuk a Ft-ot és az összes szóközt
   const numb = parseFloat(clearText);  //konv. tisztított szöveg számmá
   return !isNaN(numb) ? numb : 0;
 }
 
+const munkadijElem = document.getElementById('munkadij');
+const osszesenBruttoElem = document.getElementById('osszesenBrutto');
+const osszesenBruttoElem2 = document.getElementById('osszesenBrutto2');
+const osszesenBruttoElem3 = document.getElementById('osszesenBrutto3');
+const osszesenElem = document.getElementById('osszesen_1');
+const osszesenElem2 = document.getElementById('osszesen_2');
+const osszesenElem3 = document.getElementById('osszesen_3');
+
+const munkadij = konvertSzamma(munkadijElem.textContent);
+const osszesenBrutto = konvertSzamma(osszesenBruttoElem.textContent);
+const osszesenBrutto2 = konvertSzamma(osszesenBruttoElem2.textContent);
+const osszesenBrutto3 = konvertSzamma(osszesenBruttoElem3.textContent);
+
 function frissitOsszesen() {
-  const munkadijElem = document.getElementById('munkadij');
-  const osszesenBruttoElem = document.getElementById('osszesenBrutto');
-  const osszesenBruttoElem2 = document.getElementById('osszesenBrutto2');
-  const osszesenBruttoElem3 = document.getElementById('osszesenBrutto3');
-  const osszesen3Elem = document.getElementById('osszesen_1');
-
-  const munkadij = konvertSzamma(munkadijElem.textContent);
-  const osszesenBrutto = konvertSzamma(osszesenBruttoElem.textContent);
-  const osszesenBrutto2 = konvertSzamma(osszesenBruttoElem2.textContent);
-  const osszesenBrutto3 = konvertSzamma(osszesenBruttoElem3.textContent);
-
   let osszesen = munkadij + osszesenBrutto + osszesenBrutto2 + osszesenBrutto3;
-
-  osszesen3Elem.textContent = osszesen.toLocaleDateString("hu-HU") + " Ft";
+  osszesenElem.textContent = osszesen.toLocaleDateString("hu-HU") + " Ft";
 }
-document.addEventListener('DOMContentLoaded', frissitOsszesen);
+
+function frissitOsszesen2() {
+  let osszesen = munkadij + osszesenBrutto;
+  let osszesen2 = munkadij + osszesenBrutto2;
+  let osszesen3 = munkadij + osszesenBrutto3;
+
+  osszesenElem.textContent = osszesen.toLocaleString("hu-HU") + " Ft";
+  osszesenElem2.textContent = osszesen2.toLocaleString("hu-HU") + " Ft";
+  osszesenElem3.textContent = osszesen3.toLocaleString("hu-HU") + " Ft";
+}
+
+document.getElementById('brutto_ar3').addEventListener('change', frissitOsszesen2);
+document.getElementById('db3').addEventListener('change', frissitOsszesen2);
+document.getElementById('brutto_ar2').addEventListener('change', frissitOsszesen2);
+document.getElementById('db2').addEventListener('change', frissitOsszesen2);
+document.getElementById('kerekszereles').addEventListener('change', frissitOsszesen2);
+document.addEventListener('DOMContentLoaded', frissitOsszesen2);
+
+
