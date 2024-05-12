@@ -97,7 +97,7 @@
         </td>
         <td class="x69">Megnevezés</td>
         <td class="x45">Bruttó ár</td>
-        <td class="x54">db</td>
+        <td id="x54">db</td>
         <td class="x31">Összesen bruttó</td>
 
       </tr>
@@ -125,19 +125,22 @@
         <tr class="x68">
           <td class="x70" rowspan="3">2.
             <div>
-              <div id="kepCella2"></div>
-              <input type="file" id="kepValaszto2" accept="image/*">
+              <div id="kepCella2"
+                   style="width: 180px; height: 160px; overflow: hidden; cursor: pointer;">
+                <!-- Itt jelenik meg a kép, amire kattintva a fájlválasztó ablak nyílik meg -->
+              </div>
+              <input type="file" id="kepValaszto2" accept="image/*" style="display: none;" />
             </div>
           </td>
         </tr>
         <tr class="x68">
-          <td rowspan="3" class="x69">
-            <label for="megnevezes2"></label><textarea id="megnevezes2" rows="7"
-                                                       placeholder="Ide írd a leírást"></textarea>
+          <td rowspan="3" class="x69a">
+            <textarea id="megnevezes2" rows="7" placeholder="Ide írd a termék leírását"></textarea>
           </td>
-          <td class="x45"><label for="brutto_ar2"></label><input type="number" id="brutto_ar2"> Ft</td>
-          <td class="x54"><label for="db2"></label><input type="number" id="db2"></td>
-          <td class="x31" id="osszesenBrutto2">Összesen bruttó érték</td>
+          <td class="x45a"><input type="number" id="brutto_ar2"> Ft</td>
+          <td class="x54a"><input type="number" id="db2"></td>
+          <td class="x31a" id="osszesenBrutto2">Összesen bruttó érték</td>
+
         </tr>
         <tr>
           <td rowspan="2">szállíthatóság kb. <label for="ido2"></label><input type="number" id="ido2"> munkanap</td>
@@ -183,8 +186,8 @@
           <td class="autora" colspan="4">Az autóra felszerelés költsége bruttó:</td>
           <td></td>
           <td class="y11">
-            <select name="" id="kerekszereles" onchange="updateMunkadij()">
-              <option value="0">Válasszon szolgáltatást</option>
+            <select id="kerekszereles" onchange="updateMunkadij()">
+              <option value="">Válasszon szolgáltatást</option>
             </select>
           </td>
           <td id="munkadij">ide jön a munkadíj</td>

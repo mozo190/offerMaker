@@ -232,31 +232,31 @@ document.getElementById("db3").addEventListener('change', updateOsszes3);
 document.getElementById("brutto_ar3").addEventListener('input', updateOsszes3);
 document.getElementById("db3").addEventListener('input', updateOsszes3);
 
-updatOsszesen2();
+
 updateOsszes3();
 frissitOsszesen();
 
 const szolgaltatasok = {
-  "nem igényel szerelést": {"ar": 0, "netto": 0},
-  "kerékszerelés 16'-ig /4 db": {"ar": "8 890", "netto": "7 000"},
-  "kerékszerelés 17-19'-ig /4 db": {"ar": "10 415", "netto": "8 200"},
-  "kerékszerelés 20'- /4 db": {"ar": "12 955", "netto": "10 200"},
-  "gumiszerelés 16'-ig Ft/4 db": {"ar": "15 875", "netto": "12 500"},
-  "gumiszerelés 17-19'-ig Ft/4 db": {"ar": "19 050", "netto": "15 000"},
-  "gumiszerelés 20'-ig Ft/4 db": {"ar": "25 275", "netto": "19 902"},
-  "vonóhorog szerelés": {"ar": "130 000", "netto": "102 362"},
-  "kamera szerelés": {"ar": "150 000", "netto": "118 110"},
-  "első vagy hátsó sárfogó szerelés": {"ar": "15 000", "netto": "11 811"},
-  "első és hátsó sárfogó szerelés": {"ar": "30 000", "netto": "23 622"},
-  "légterelő szerelés": {"ar": "8 000", "netto": "6 300"},
-  "felépítmény szerelés": {"ar": "100 000", "netto": "78 740"},
-  "váltózár szerelés": {"ar": "45 000", "netto": "35 433"},
-  "riasztó szerelés": {"ar": "35 000", "netto": "27 560"},
-  "lökhárító fólia szerelés": {"ar": "15 000", "netto": "11 811"},
-  "VW/Skoda appconnect szerelés": {"ar": "25 000", "netto": "19 685"},
-  "Audi Smartphone szerelés": {"ar": "150 000", "netto": "118 110"},
-  "tükörmonitor + kamera szerelés": {"ar": "84 000", "netto": "66 000"},
-  "külön tájékoztató alapján": {"ar": ""}
+  "nem igényel szerelést": { ar: 0, netto: 0},
+  "kerékszerelés 16'-ig /4 db": {ar: "8 890", netto: "7 000"},
+  "kerékszerelés 17-19'-ig /4 db": {ar: "10 415", netto: "8 200"},
+  "kerékszerelés 20'- /4 db": {ar: "12 955", netto: "10 200"},
+  "gumiszerelés 16'-ig Ft/4 db": {ar: "15 875", netto: "12 500"},
+  "gumiszerelés 17-19'-ig Ft/4 db": {ar: "19 050", netto: "15 000"},
+  "gumiszerelés 20'-ig Ft/4 db": {ar: "25 275", netto: "19 902"},
+  "vonóhorog szerelés": {ar: "130 000", netto: "102 362"},
+  "kamera szerelés": {ar: "150 000", netto: "118 110"},
+  "első vagy hátsó sárfogó szerelés": {ar: "15 000", netto: "11 811"},
+  "első és hátsó sárfogó szerelés": {ar: "30 000", netto: "23 622"},
+  "légterelő szerelés": {ar: "8 000", netto: "6 300"},
+  "felépítmény szerelés": {ar: "100 000", netto: "78 740"},
+  "váltózár szerelés": {ar: "45 000", netto: "35 433"},
+  "riasztó szerelés": {ar: "35 000", netto:  "27 560"},
+  "lökhárító fólia szerelés": {ar: "15 000", netto: "11 811"},
+  "VW/Skoda appconnect szerelés": {ar: "25 000", netto: "19 685"},
+  "Audi Smartphone szerelés": {ar: "150 000", netto: "118 110"},
+  "tükörmonitor + kamera szerelés": {ar: "84 000", netto: "66 000"},
+  "külön tájékoztató alapján": {ar: ""}
 };
 
 let bruttoNettoAllapot = true;  // true: bruttó, false: netto
