@@ -526,3 +526,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //kattintásre eltüntetjük/megjelenítjük a 2-3. sort
+var x71Elem = document.getElementById('x71');
+var tablaSor = document.getElementById("tablaSor");
+var tablaSor2 = document.getElementById("secRowCollapse");
+var tablaSor3 = document.getElementById("thirdRowCollapse");
+
+var tablaSor2Visible = true;
+
+x71Elem.addEventListener('click', function () {
+  if (tablaSor2Visible){
+    tablaSor.style.display = "none";
+    tablaSor2.style.display = "none";
+    tablaSor3.style.display = "none";
+    tablaSor2Visible = false;
+  } else {
+    tablaSor.style.display = "table-row";
+    tablaSor2.style.display = "table-row";
+    tablaSor2Visible = true;
+  }
+});
