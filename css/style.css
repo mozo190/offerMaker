@@ -107,7 +107,7 @@ th {
   padding: 0;
 }
 img#autokep {
-  width: 320px;
+  width: 350px;
   height: 200px;
   margin: 0;
   padding: 0;
@@ -125,10 +125,10 @@ img#autokep {
   width: 200px;
 }
 
-#autokep {
-  width: 200px;
-  height: 200px;
-}
+/*#autokep {*/
+/*  width: 200px;*/
+/*  height: 200px;*/
+/*}*/
 
 #tabla input,
 #tabla select {
@@ -149,16 +149,11 @@ img#autokep {
 }
 
 #megnevezes,
-#megnevezes2{
+#megnevezes2,
+#megnevezes3{
   text-align: center;
   font-weight: bold;
   width: 150px;
-  border: none;
-}
-
-#megnevezes3 {
-  width: 100%;
-  text-align: left;
   border: none;
 }
 
@@ -168,11 +163,11 @@ img#autokep {
   text-align: left;
   vertical-align: center;
 }
-td.x70 {
-  text-align: left;
-  vertical-align: center;
-  height: 180px;
-}
+/*td.x70 {*/
+/*  text-align: left;*/
+/*  vertical-align: center;*/
+/*  height: 180px;*/
+/*}*/
 .felni {
   width: 150px;
   height: 150px;
@@ -194,7 +189,7 @@ td.x70 {
   height: 4px;
 }
 
-.table {
+.tabla {
   table-layout: auto;
   width: 100%;
 }
@@ -299,12 +294,11 @@ td.autora {
   height: 1px;
   padding: 2px;
 }
-
 #kepCella,
 #kepCella2,
-#kepCella3 {
+#kepCella3{
   width: 180px;
   height: 160px;
-  overflow: hidden;
-  cursor:pointer;
+  /*overflow: hidden;*/
+  cursor: pointer;
 }

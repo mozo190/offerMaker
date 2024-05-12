@@ -136,16 +136,16 @@ function updateOsszes() {
 
   if (isNaN(bruttoAr) || bruttoAr <= 0) {
     bruttoAr = 0;
-    bruttoArElem.classList.add("error");
+    bruttoArElem.classList.add("hiba");
   } else {
-    bruttoArElem.classList.remove("error");
+    bruttoArElem.classList.remove("hiba");
   }
 
   if (isNaN(db) || db <= 0) {
     db = 0;
-    dbElem.classList.add("error");
+    dbElem.classList.add("hiba");
   } else {
-    dbElem.classList.remove("error");
+    dbElem.classList.remove("hiba");
   }
   const osszes = bruttoAr * db;
   osszesElem.textContent = osszes.toLocaleString("hu-HU") + " Ft";
@@ -172,18 +172,18 @@ function updatOsszesen2() {
 
   if (isNaN(bruttoAr2) || bruttoAr2 <= 0) {
     bruttoAr2 = 0;
-    bruttoArElem.classList.add("error");
+    bruttoArElem.classList.add("hiba");
   } else {
-    bruttoArElem.classList.remove("error");
+    bruttoArElem.classList.remove("hiba");
   }
 
   if (isNaN(db2) || db2 <= 0) {
     db = 0;
-    dbElem.classList.add("error");
+    dbElem.classList.add("hiba");
   } else {
-    dbElem.classList.remove("error");
+    dbElem.classList.remove("hiba");
   }
-  const osszes2 = bruttoAr2 * db;
+  const osszes2 = bruttoAr2 * db2;
   osszesElem.textContent = osszes2.toLocaleString("hu-HU") + " Ft";
 
   frissitOsszesen();
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const osszesen2 = document.getElementById('osszesen_2');
   const osszesen3 = document.getElementById('osszesen_3');
 
-  let isConstentVisible = true //a tartalom látható kezdetben
+  let isConstentVisible = true; //a tartalom látható kezdetben
 
   oneVar.addEventListener('click', function () {
     isConstentVisible = !isConstentVisible;
@@ -371,9 +371,9 @@ document.getElementById('kerekszereles').addEventListener('change', frissitOssze
 document.addEventListener('DOMContentLoaded', frissitOsszesen2);
 
 //1. kép feltöltése
-document.getElementById("kepCella").addEventListener('click', function () {
-  console.log("képCella");
-  document.getElementById("kepValaszto").click();
+document.getElementById('kepCella').addEventListener('click', function () {
+  const imageInput = document.getElementById('kepValaszto');
+  imageInput.click();
 });
 document.getElementById("kepValaszto").addEventListener('change', function (e) {
   const file = e.target.files[0];
@@ -386,6 +386,8 @@ document.getElementById("kepValaszto").addEventListener('change', function (e) {
       img.src = e.target.result;             // a beolvasott kép beolvasása
 
       img.className = 'felni';
+      img.style.width = "100%";
+      img.style.height = "auto";
       kepCella.appendChild(img);
     };
     reader.readAsDataURL(file);

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="hu">
 
 <head>
@@ -20,35 +20,34 @@
 
   <link rel="manifest" href="./site.webmanifest">
   <meta name="theme-color" content="#fafafa">
+
 </head>
 
 <body>
 <div class="container">
   <section>
     <table>
-      <tbody>
+
       <tr>
         <td class="pia">PORSCHE INTER AUTO HUNGARIA KFT - PORSCHE BUDA telephely</td>
       </tr>
       <tr class="place">
         <td id="datetime" class="datetime-right"></td>
       </tr>
-      </tbody>
+
     </table>
     <tr>
       <td class="ajanlatunk"><strong>AJÁNLATUNK:</strong><span id="ajanlatunk">  </span></td>
     </tr>
     <!-- HÁROM OSZLOPOS TÁBLÁZAT -->
     <table>
-      <thead>
+
       <tr>
         <th scope="col"><strong>Az Ön műhelye:</strong></th>
         <th scope="col"><strong>E-mail (céges):</strong></th>
         <th scope="col"><strong>Érvényes:</strong></th>
       </tr>
-      </thead>
 
-      <tbody>
       <tr>
         <td>PORSCHE INTER AUTÓ HUNGARIA KFT.</td>
         <td><label for="ertekesito"></label><select name="ert" id="ertekesito"></select></td>
@@ -69,8 +68,8 @@
       <tr>
         <td colspan="3">
           <label for="auto"></label><select id="auto" onchange="updateAuto()">
-            <option value="0">Válasszon autót</option>
-          </select>
+          <option value="0">Válasszon autót</option>
+        </select>
         </td>
       </tr>
       <tr>
@@ -81,17 +80,17 @@
       <tr class="place">
         <td colspan="3"></td>
       </tr>
-      </tbody>
+
     </table>
   </section>
 
   <table class="tabla">
-    <tbody>
+
     <tr class="x68">
       <td class="x70" rowspan="4">1.
         <div>
-          <div id="kepCella" style="width: 180px; height: 160px; overflow: hidden; cursor: pointer"></div>
-          <input type="file" id="kepValaszto" accept="image/*" style="display: none;"/>
+          <div id="kepCella"></div>
+          <input type="file" id="kepValaszto" accept="image/*"/>
         </div>
       </td>
       <td class="x69">Megnevezés</td>
@@ -113,25 +112,26 @@
       <td rowspan="2"></td>
       <td rowspan="2"></td>
     </tr>
-    </tbody>
+
     <table id="tableX71">
 
       <td id="x71" colspan="3"></td>
 
     </table>
     <table class="tabla2" id="tablaSor">
-      <tbody>
+
       <tr class="x68">
         <td class="x70" rowspan="3">2.
           <div>
             <div id="kepCella2"></div>
-            <input type="file" id="kepValaszto2" accept="image/*" style="display: none">
+            <input type="file" id="kepValaszto2" accept="image/*">
           </div>
         </td>
       </tr>
       <tr class="x68">
         <td rowspan="3" class="x69">
-          <label for="megnevezes2"></label><textarea id="megnevezes2" rows="7" placeholder="Ide írd a leírást"></textarea>
+          <label for="megnevezes2"></label><textarea id="megnevezes2" rows="7"
+                                                     placeholder="Ide írd a leírást"></textarea>
         </td>
         <td class="x45"><label for="brutto_ar2"></label><input type="number" id="brutto_ar2"> Ft</td>
         <td class="x54"><label for="db2"></label><input type="number" id="db2"></td>
@@ -142,7 +142,7 @@
         <td rowspan="2"></td>
         <td rowspan="2"></td>
       </tr>
-      </tbody>
+
       <table id="tableX72">
 
         <td id="x72" colspan="3"></td>
@@ -156,13 +156,14 @@
         <td class="x70" rowspan="3">3.
           <div>
             <div id="kepCella3"></div>
-            <input type="file" id="kepValaszto3" accept="image/*" style="display: none">
+            <input type="file" id="kepValaszto3" accept="image/*">
           </div>
         </td>
       </tr>
       <tr class="x68">
         <td rowspan="3" class="x69a">
-          <label for="megnevezes3"></label><textarea id="megnevezes3" rows="7" placeholder="Ide írd a leírást"></textarea>
+          <label for="megnevezes3"></label><textarea id="megnevezes3" rows="7"
+                                                     placeholder="Ide írd a leírást"></textarea>
         </td>
         <td class="x45a"><label for="brutto_ar3"></label><input type="number" id="brutto_ar3"> Ft</td>
         <td class="x54a"><label for="db3"></label><input type="number" id="db3"></td>
