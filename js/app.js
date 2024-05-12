@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function initSzolgaltatasDropdown() {
   const szolgaltatasSelectElem = document.getElementById("kerekszereles");
-  szolgaltatasSelectElem.innerHTML = "";   //meglévő opciók eltávolítása
+  szolgaltatasSelectElem.innerHTML = ""; //meglévő opciók eltávolítása
 
   Object.keys(szolgaltatasok).forEach(szolgaltatasNev => {
     const option = document.createElement("option");
@@ -284,6 +284,7 @@ function initSzolgaltatasDropdown() {
     option.textContent = szolgaltatasNev;
     szolgaltatasSelectElem.appendChild(option);
   });
+
 }
 
 function updateMunkadij() {
@@ -293,6 +294,8 @@ function updateMunkadij() {
 
   if (valasztottSzolgaltatas === "") {
     munkadijElem.textContent = "0 Ft";
+    // frissitOsszesen();
+    return;
   }
   const munkadij = bruttoNettoAllapot ? kivalasztottSzolgaltatasAdatok.ar : kivalasztottSzolgaltatasAdatok.netto;
   munkadijElem.textContent = `${munkadij} Ft`;
@@ -374,19 +377,17 @@ document.getElementById('kepCella').addEventListener('click', function () {
   const imageInput = document.getElementById('kepValaszto');
   imageInput.click();
 });
-document.getElementById("kepValaszto").addEventListener('change', function (e) {
+document.getElementById('kepValaszto').addEventListener('change', function (e) {
   const file = e.target.files[0];
   if (file && file.type.startsWith('image/')) {
     const reader = new FileReader();
     reader.onload = function (e) {
       const kepCella = document.getElementById('kepCella');
-      kepCella.innerHTML = '';               //előző kép eltávolítása
+      kepCella.innerHTML = ''; // Előző kép eltávolítása
       const img = new Image();
-      img.src = e.target.result;             // a beolvasott kép beolvasása
+      img.src = e.target.result; // A beolvasott kép forrása
 
       img.className = 'felni';
-      img.style.width = "100%";
-      img.style.height = "auto";
       kepCella.appendChild(img);
     };
     reader.readAsDataURL(file);
@@ -475,13 +476,14 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('x80').textContent = "";
       document.getElementById('x90').textContent = "";
       document.getElementById('x100').textContent = "";
-      bruttoNettoAllapot = true
+      bruttoNettoAllapot = true;
+      return;
     }
 
     // "osszesen_1", "osszesen_2" értékének lekérése és konvertálása számmá
-    const osszesen1Ertek = parseFloat(document.getElementById('osszesen_1').textContent.replace(' Ft', '').replace(/\s+/g, ''));
-    const osszesen2Ertek = parseFloat(document.getElementById('osszesen_2').textContent.replace(' Ft', '').replace(/\s+/g, ''));
-    const osszesen3Ertek = parseFloat(document.getElementById('osszesen_3').textContent.replace(' Ft', '').replace(/\s+/g, ''));
+    const osszesen1Ertek = parseFloat(document.getElementById('osszesen_1').textContent.replace(/\D/g, ''));
+    const osszesen2Ertek = parseFloat(document.getElementById('osszesen_2').textContent.replace(/\D/g, ''));
+    const osszesen3Ertek = parseFloat(document.getElementById('osszesen_3').textContent.replace(/\s+/g, ''));
 
     const afa = 1.27;
 
