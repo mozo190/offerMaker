@@ -162,10 +162,10 @@ document.getElementById("db").addEventListener('input', updateOsszes);
 updateOsszes();
 frissitOsszesen();
 
-function updatOsszesen2() {
+function updateOsszes2() {
   const bruttoArElem = document.getElementById("brutto_ar2");
   const dbElem = document.getElementById("db2");
-  const osszesElem = document.getElementById("osszesenBrutto2");
+  const osszesenBruttoElem = document.getElementById("osszesenBrutto2");
 
   let bruttoAr2 = parseInt(bruttoArElem.value);
   let db2 = parseInt(dbElem.value);
@@ -176,26 +176,24 @@ function updatOsszesen2() {
   } else {
     bruttoArElem.classList.remove("hiba");
   }
-
   if (isNaN(db2) || db2 <= 0) {
-    db = 0;
+    db2 = 0;
     dbElem.classList.add("hiba");
   } else {
     dbElem.classList.remove("hiba");
   }
-  const osszes2 = bruttoAr2 * db2;
-  osszesElem.textContent = osszes2.toLocaleString("hu-HU") + " Ft";
+  const osszesenBrutto2 = bruttoAr2 * db2;
 
+  osszesenBruttoElem.textContent = osszesenBrutto2.toLocaleString("hu-Hu") + " Ft";
   frissitOsszesen();
 }
+document.getElementById('brutto_ar2').addEventListener('change', updateOsszes2);
+document.getElementById('db2').addEventListener('change', updateOsszes2);
 
-document.getElementById("brutto_ar2").addEventListener('change', updatOsszesen2);
-document.getElementById("db2").addEventListener('change', updatOsszesen2);
+document.getElementById('brutto_ar2').addEventListener('input', updateOsszes2);
+document.getElementById('db2').addEventListener('input', updateOsszes2);
 
-document.getElementById("brutto_ar2").addEventListener('input', updatOsszesen2);
-document.getElementById("db2").addEventListener('input', updatOsszesen2);
-
-updatOsszesen2();
+updateOsszes2();
 frissitOsszesen();
 
 //3. bruttó * db = összesen
@@ -224,7 +222,7 @@ function updateOsszes3() {
   const osszes3 = bruttoAr3 * db3;
   osszesElem.textContent = osszes3.toLocaleString("hu-HU") + " Ft";
 
-  updateOsszes3();
+
   frissitOsszesen();
 }
 
@@ -234,6 +232,7 @@ document.getElementById("db3").addEventListener('change', updateOsszes3);
 document.getElementById("brutto_ar3").addEventListener('input', updateOsszes3);
 document.getElementById("db3").addEventListener('input', updateOsszes3);
 
+updatOsszesen2();
 updateOsszes3();
 frissitOsszesen();
 
@@ -266,12 +265,12 @@ document.addEventListener('DOMContentLoaded', function () {
   initSzolgaltatasDropdown();
   updateMunkadij();
 
-  document.querySelector('x45').addEventListener('click', function () {
+  document.querySelector('.x45').addEventListener('click', function () {
     bruttoNettoAllapot = !bruttoNettoAllapot;
     updateMunkadij();   //frissítjuk a munkadijat az új állapot alapján
     //a cellák szövegének frissítése az új állapotnak megfelelően
     this.textContent = bruttoNettoAllapot ? "Bruttó ár" : "Nettó ár";
-    document.querySelector('x31').textContent = bruttoNettoAllapot ? "Összesen bruttó" : "Összesen nettó";
+    document.querySelector('.x31').textContent = bruttoNettoAllapot ? "Összesen bruttó" : "Összesen nettó";
   });
 });
 
