@@ -449,3 +449,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+//brutto-netto ár kiszámítása és megjelenítése
+document.addEventListener('DOMContentLoaded', () => {
+  let bruttoNettoAllapot = true;
+  const bruttoArCella = document.querySelector('.x45');
+  const osszesenBruttoCella = document.querySelector('.x31');
+  const autoraCella = document.querySelector('.autora');
+
+  bruttoArCella.addEventListener('click', () => {
+    if (bruttoNettoAllapot) {
+      bruttoArCella.textContent = 'Nettó ár';
+      osszesenBruttoCella.textContent = 'Összesen nettó';
+      autoraCella.textContent = 'Az autóra felszerelés költsége nettó:';
+      bruttoNettoAllapot = false;
+    } else {
+      bruttoArCella.textContent = 'Bruttó ár';
+      osszesenBruttoCella.textContent = 'Összesen bruttó';
+      autoraCella.textContent = 'Az autóra felszerelés költsége bruttó:';
+      document.getElementById('x80').textContent = "";
+      document.getElementById('x90').textContent = "";
+      document.getElementById('x100').textContent = "";
+      bruttoNettoAllapot = true
+    }
+
+    // "osszesen_1", "osszesen_2" értékének lekérése és konvertálása számmá
+  });
+});
