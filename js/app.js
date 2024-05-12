@@ -245,25 +245,25 @@ const szolgaltatasok = {
   "gumiszerelés 16'-ig Ft/4 db": {"ar": "15 875", "netto": "12 500"},
   "gumiszerelés 17-19'-ig Ft/4 db": {"ar": "19 050", "netto": "15 000"},
   "gumiszerelés 20'-ig Ft/4 db": {"ar": "25 275", "netto": "19 902"},
-  "vonóhorog szerelés": {ar: "130 000", netto: "102 362"},
-  "kamera szerelés": {ar: "150 000", netto: "118 110"},
-  "első vagy hátsó sárfogó szerelés": {ar: "15 000", netto: "11 811"},
-  "első és hátsó sárfogó szerelés": {ar: "30 000", netto: "23 622"},
-  "légterelő szerelés": {ar: "8 000", netto: "6 300"},
-  "felépítmény szerelés": {ar: "100 000", netto: "78 740"},
-  "váltózár szerelés": {ar: "45 000", netto: "35 433"},
-  "riasztó szerelés": {ar: "35 000", netto: "27 560"},
-  "lökhárító fólia szerelés": {ar: "15 000", netto: "11 811"},
-  "VW/Skoda appconnect szerelés": {ar: "25 000", netto: "19 685"},
-  "Audi Smartphone szerelés": {ar: "150 000", netto: "118 110"},
-  "tükörmonitor + kamera szerelés": {ar: "84 000", netto: "66 000"},
-  "külön tájékoztató alapján": {ar: ""}
+  "vonóhorog szerelés": {"ar": "130 000", "netto": "102 362"},
+  "kamera szerelés": {"ar": "150 000", "netto": "118 110"},
+  "első vagy hátsó sárfogó szerelés": {"ar": "15 000", "netto": "11 811"},
+  "első és hátsó sárfogó szerelés": {"ar": "30 000", "netto": "23 622"},
+  "légterelő szerelés": {"ar": "8 000", "netto": "6 300"},
+  "felépítmény szerelés": {"ar": "100 000", "netto": "78 740"},
+  "váltózár szerelés": {"ar": "45 000", "netto": "35 433"},
+  "riasztó szerelés": {"ar": "35 000", "netto": "27 560"},
+  "lökhárító fólia szerelés": {"ar": "15 000", "netto": "11 811"},
+  "VW/Skoda appconnect szerelés": {"ar": "25 000", "netto": "19 685"},
+  "Audi Smartphone szerelés": {"ar": "150 000", "netto": "118 110"},
+  "tükörmonitor + kamera szerelés": {"ar": "84 000", "netto": "66 000"},
+  "külön tájékoztató alapján": {"ar": ""}
 };
 
 let bruttoNettoAllapot = true;  // true: bruttó, false: netto
 
 document.addEventListener('DOMContentLoaded', function () {
-  initSzolgaltatasDropDown();
+  initSzolgaltatasDropdown();
   updateMunkadij();
 
   document.querySelector('x45').addEventListener('click', function () {
@@ -371,9 +371,13 @@ document.getElementById('kerekszereles').addEventListener('change', frissitOssze
 document.addEventListener('DOMContentLoaded', frissitOsszesen2);
 
 //1. kép feltöltése
-document.getElementById("kepCella").addEventListener('click', function (e) {
+document.getElementById("kepCella").addEventListener('click', function () {
+  console.log("képCella");
+  document.getElementById("kepValaszto").click();
+});
+document.getElementById("kepValaszto").addEventListener('change', function (e) {
   const file = e.target.files[0];
-  if (file && file.type.startsWith('image/')){
+  if (file && file.type.startsWith('image/')) {
     const reader = new FileReader();
     reader.onload = function (e) {
       const kepCella = document.getElementById('kepCella');
@@ -396,7 +400,7 @@ document.getElementById("kepCella2").addEventListener('click', function () {
 
 document.getElementById("kepValaszto2").addEventListener('change', function (e) {
   const file2 = e.target.files[0];
-  if (file2 && file2.type.startsWith('image/')){
+  if (file2 && file2.type.startsWith('image/')) {
     const reader2 = new FileReader();
     reader2.onload = function (e) {
       const kepCella2 = document.getElementById('kepCella2');
@@ -412,16 +416,16 @@ document.getElementById("kepValaszto2").addEventListener('change', function (e) 
 })
 
 //3. kép feltöltése
-document.getElementById('kepCella3').addEventListener('click', function (){
+document.getElementById('kepCella3').addEventListener('click', function () {
   const imageInput = document.getElementById('kepValaszto3');
   imageInput.click();
 });
 
 document.getElementById('kepValaszto3').addEventListener('change', function (e) {
   const file2 = e.target.files[0];
-  if (file2 && file2.type.startsWith('image/')){
+  if (file2 && file2.type.startsWith('image/')) {
     const reader2 = new FileReader();
-    reader2.onload = function (e){
+    reader2.onload = function (e) {
       const kepCella2 = document.getElementById('kepCella3');
       kepCella2.innerHTML = '';
       const img2 = new Image();
@@ -440,8 +444,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let textDisable = false;
 
   cella.addEventListener('click', () => {
-    if (textDisable){
-      cella.textContent =  "Finomszemű hólánc alkalmazása csak a járműgyártó által jóváhagyott hólánccal lehetséges azon a tengelyen, amelyre a jármű kezelési utasítása engedélyezi.";
+    if (textDisable) {
+      cella.textContent = "Finomszemű hólánc alkalmazása csak a járműgyártó által jóváhagyott hólánccal lehetséges azon a tengelyen, amelyre a jármű kezelési utasítása engedélyezi.";
       textDisable = false;
     } else {
       cella.textContent = '';
@@ -481,18 +485,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const afa = 1.27;
 
     // "x80", "x90", "x100" értékének beállítása áfa szorzatával, ha nettóban vagyunk
-    document.getElementById('x80').textContent = bruttoNettoAllapot ? "": "Bruttó:" + Math.round((osszesen1Ertek * afa)).toLocaleString('hu-HU') + ' Ft';
-    document.getElementById('x90').textContent = bruttoNettoAllapot ? "": "Bruttó:" + Math.round((osszesen2Ertek * afa)).toLocaleString('hu-HU') + ' Ft';
-    document.getElementById('x100').textContent = bruttoNettoAllapot ? "": "Bruttó:" + Math.round((osszesen3Ertek * afa)).toLocaleString('hu-HU') + ' Ft';
+    document.getElementById('x80').textContent = bruttoNettoAllapot ? "" : "Bruttó:" + Math.round((osszesen1Ertek * afa)).toLocaleString('hu-HU') + ' Ft';
+    document.getElementById('x90').textContent = bruttoNettoAllapot ? "" : "Bruttó:" + Math.round((osszesen2Ertek * afa)).toLocaleString('hu-HU') + ' Ft';
+    document.getElementById('x100').textContent = bruttoNettoAllapot ? "" : "Bruttó:" + Math.round((osszesen3Ertek * afa)).toLocaleString('hu-HU') + ' Ft';
   });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
   const dbCella = document.getElementById('x54');
 
-  if (dbCella){
+  if (dbCella) {
     dbCella.addEventListener('click', () => {
-      if (dbCella.textContent === 'db'){
+      if (dbCella.textContent === 'db') {
         dbCella.textContent = 'garn.';
       } else {
         dbCella.textContent = 'db';
@@ -514,10 +518,10 @@ document.addEventListener('DOMContentLoaded', () => {
     "A fenti ajánlat nem tartalmazza a vizsgát! - Elektromos autó vizsga 36.900 Ft",
     "A fenti ajánlat nem tartalmazza a vizsgát! - Prémium autó vizsga 46.800 Ft (Touareg/Audi)",
     ""
-];
+  ];
   let representIndex = 0;
 
-  if (vizsgaztatasCella){
+  if (vizsgaztatasCella) {
     vizsgaztatasCella.addEventListener('click', () => {
       representIndex = (representIndex + 1) % texts.length;
       vizsgaztatasCella.textContent = texts[representIndex];
@@ -526,7 +530,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //kattintásre eltüntetjük/megjelenítjük a 2-3. sort
-var x71Elem = document.getElementById('x71');
+var x71Elem = document.getElementById('tableX71');
 var x71Elem1 = document.getElementById('tableX72');
 var tablaSor = document.getElementById("tablaSor");
 var tablaSor1 = document.getElementById("tablaSor1");
@@ -536,7 +540,7 @@ var tablaSor3 = document.getElementById("thirdRowCollapse");
 var tablaSor2Visible = true;
 
 x71Elem.addEventListener('click', function () {
-  if (tablaSor2Visible){
+  if (tablaSor2Visible) {
     tablaSor.style.display = "none";
     tablaSor2.style.display = "none";
     tablaSor3.style.display = "none";
@@ -549,7 +553,7 @@ x71Elem.addEventListener('click', function () {
 });
 
 x71Elem1.addEventListener('click', function () {
-  if (tablaSor2Visible){
+  if (tablaSor2Visible) {
     tablaSor1.style.display = "none";
     tablaSor3.style.display = "none";
     tablaSor2Visible = false;

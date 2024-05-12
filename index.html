@@ -90,8 +90,8 @@
     <tr class="x68">
       <td class="x70" rowspan="4">1.
         <div>
-          <div id="kepCella"></div>
-          <input type="file" name="" id="kepValaszto" accept="image/*" style="display: none">
+          <div id="kepCella" style="width: 180px; height: 160px; overflow: hidden; cursor: pointer"></div>
+          <input type="file" id="kepValaszto" accept="image/*" style="display: none;"/>
         </div>
       </td>
       <td class="x69">Megnevezés</td>
@@ -104,8 +104,8 @@
       <td rowspan="3" class="x69">
         <label for="megnevezes"></label><textarea id="megnevezes" rows="7" placeholder="Ide írd a leírást"></textarea>
       </td>
-      <td class="x45"><label for="brutto_ar"></label><input type="number" id="brutto_ar"> Ft</td>
-      <td class="x54"><label for="db"></label><input type="number" id="db"></td>
+      <td class="x45"><input type="number" id="brutto_ar"/> Ft</td>
+      <td class="x54"><label for="db"></label><input type="number" id="db"/></td>
       <td class="x31" id="osszesenBrutto">Összesen bruttó érték</td>
     </tr>
     <tr>
@@ -180,7 +180,7 @@
         <td class="autora" colspan="4">Az autóra felszerelés költsége bruttó:</td>
         <td></td>
         <td class="y11">
-          <label for="kerekszereles"></label><select name="" id="kerekszereles" onchange="updateMunkadij()">
+          <select name="" id="kerekszereles" onchange="updateMunkadij()">
             <option value="0">Válasszon szolgáltatást</option>
           </select>
         </td>
@@ -231,9 +231,9 @@
 
   </table>
 
-  <script src="../ajanlatkeszito/js/autok.js"></script>
-  <script src="../ajanlatkeszito/js/ertekesitok.js"></script>
-  <script src="../ajanlatkeszito/js/app.js"></script>
 </div>
+<script src="../ajanlatkeszito/js/autok.js"></script>
+<script src="../ajanlatkeszito/js/ertekesitok.js"></script>
+<script src="../ajanlatkeszito/js/app.js"></script>
 </body>
 </html>
