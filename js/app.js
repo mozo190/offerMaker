@@ -486,3 +486,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('x100').textContent = bruttoNettoAllapot ? "": "Bruttó:" + Math.round((osszesen3Ertek * afa)).toLocaleString('hu-HU') + ' Ft';
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const dbCella = document.getElementById('x54');
+
+  if (dbCella){
+    dbCella.addEventListener('click', () => {
+      if (dbCella.textContent === 'db'){
+        dbCella.textContent = 'garn.';
+      } else {
+        dbCella.textContent = 'db';
+      }
+    });
+  }
+});
