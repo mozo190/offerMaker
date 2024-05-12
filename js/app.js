@@ -500,3 +500,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+//vizsgáztatás kiválasztása klikkeléssel
+document.addEventListener('DOMContentLoaded', () => {
+  const vizsgaztatasCella = document.getElementById('vono');
+
+  const texts = [
+    "A fenti ajánlat nem tartalmazza a vizsgát! - korlátozott vizsga 16.000 - 25.000 Ft",
+    "A fenti ajánlat nem tartalmazza a vizsgát! - normál vizsga 35.000 Ft",
+    "A fenti ajánlat nem tartalmazza a vizsgát! - normál 4x4 vizsga 42.300 Ft",
+    "A fenti ajánlat nem tartalmazza a vizsgát! - teherautó normál vizsga 35.800 Ft",
+    "A fenti ajánlat nem tartalmazza a vizsgát! - teherautó 4x4 vizsga 42.200 Ft",
+    "A fenti ajánlat nem tartalmazza a vizsgát! - Elektromos autó vizsga 36.900 Ft",
+    "A fenti ajánlat nem tartalmazza a vizsgát! - Prémium autó vizsga 46.800 Ft (Touareg/Audi)",
+    ""
+];
+  let representIndex = 0;
+
+  if (vizsgaztatasCella){
+    vizsgaztatasCella.addEventListener('click', () => {
+      representIndex = (representIndex + 1) % texts.length;
+      vizsgaztatasCella.textContent = texts[representIndex];
+    });
+  }
+});
+
+//kattintásre eltüntetjük/megjelenítjük a 2-3. sort
