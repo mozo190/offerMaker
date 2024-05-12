@@ -253,6 +253,7 @@ td.autora {
 .place1 {
   font-size: large;
   font-weight: bold;
+  width: 100%;
 }
 
 .red {
@@ -271,7 +272,13 @@ td.autora {
 
 #thanksTelefonszam {
   width: 20%;
+  text-align: right;
 }
+/*#text {*/
+/*  text-align: left;*/
+/*  width: 50%;*/
+/*  font-weight: bold;*/
+/*}*/
 
 #oneVar {
   border-bottom: 1px solid rgb(216, 205, 205);
