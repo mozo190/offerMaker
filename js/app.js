@@ -210,16 +210,16 @@ function updateOsszes3() {
 
   if (isNaN(bruttoAr3) || bruttoAr3 <= 0) {
     bruttoAr3 = 0;
-    bruttoArElem.classList.add("error");
+    bruttoArElem.classList.add("hiba");
   } else {
-    bruttoArElem.classList.remove("error");
+    bruttoArElem.classList.remove("hiba");
   }
 
   if (isNaN(db3) || db3 <= 0) {
     db3 = 0;
-    dbElem.classList.add("error");
+    dbElem.classList.add("hiba");
   } else {
-    dbElem.classList.remove("error");
+    dbElem.classList.remove("hiba");
   }
   const osszes3 = bruttoAr3 * db3;
   osszesElem.textContent = osszes3.toLocaleString("hu-HU") + " Ft";
