@@ -474,5 +474,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // "osszesen_1", "osszesen_2" értékének lekérése és konvertálása számmá
+    const osszesen1Ertek = parseFloat(document.getElementById('osszesen_1').textContent.replace(' Ft', '').replace(/\s+/g, ''));
+    const osszesen2Ertek = parseFloat(document.getElementById('osszesen_2').textContent.replace(' Ft', '').replace(/\s+/g, ''));
+    const osszesen3Ertek = parseFloat(document.getElementById('osszesen_3').textContent.replace(' Ft', '').replace(/\s+/g, ''));
+
+    const afa = 1.27;
+
+    // "x80", "x90", "x100" értékének beállítása áfa szorzatával, ha nettóban vagyunk
+    document.getElementById('x80').textContent = bruttoNettoAllapot ? "": "Bruttó:" + Math.round((osszesen1Ertek * afa)).toLocaleString('hu-HU') + ' Ft';
+    document.getElementById('x90').textContent = bruttoNettoAllapot ? "": "Bruttó:" + Math.round((osszesen2Ertek * afa)).toLocaleString('hu-HU') + ' Ft';
+    document.getElementById('x100').textContent = bruttoNettoAllapot ? "": "Bruttó:" + Math.round((osszesen3Ertek * afa)).toLocaleString('hu-HU') + ' Ft';
   });
 });
